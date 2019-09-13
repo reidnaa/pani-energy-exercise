@@ -121,8 +121,14 @@ class OptimizationFeature extends Component {
         rows: [...this.state.historicData.rows, newRow]
       }
     });
-    console.log(this.state.optimizationResults[0].recommendations[0]);
 
+
+    // ///////////////// AREA in Question - i don;t know what im doing
+    this.setState({
+       ...this.state.optimizationResults[0].recommendations[0].value = newRow.r11
+    })
+    console.log(this.state.optimizationResults[0].recommendations[0].value);
+///////////////////////////////////////
     event.target[0].value = '';
     event.target[1].value = '';
     event.target[2].value = '';
