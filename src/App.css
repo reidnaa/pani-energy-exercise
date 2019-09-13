@@ -1,0 +1,201 @@
+.App {
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+  font-size: 14px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.feature {
+  width: 90%;
+  padding: 16px;
+  margin: auto;
+  background: #f0f2f4;
+}
+
+.divider{
+  color:#545556;
+  padding:10px;
+}
+
+.outside-controls{
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  margin: auto;
+}
+
+.outside-controls p{
+  border-bottom: 2px solid #3695f7;
+  color:#3695f7;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+
+
+fieldset{
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  padding:0;
+}
+
+legend{
+  padding: 0 10px;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.form-single{
+  flex-grow:1;
+}
+
+.form-field-label{
+  text-align: left;
+  padding:0 5px 5px;
+  color:#545556;
+}
+
+.form-field input {
+  width: 85%;
+  margin: auto;
+  padding: 10px;
+  border-radius:5px;
+  border-style:none;
+}
+
+button {
+  width: 230px;
+  border-radius: 5px;
+  background:#3695f7;
+  color: white;
+  height: 38px;
+  margin: 0 5px;
+  font-size:14px;
+  transition: 0.3s;
+  cursor:pointer;
+}
+
+.dynamic-input, .dynamic-input input{
+  font-weight:700;
+}
+
+
+button:hover{
+  background:lightblue;
+  color:darkblue;
+}
+
+.recom-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.recom-card-header{
+  padding:15px;
+}
+
+.recom-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 49%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.recom-card-header {
+  padding: 15px 15px 15px 5px;
+  color: #544747;
+}
+
+
+
+.recom-card input {
+  border: none;
+  padding: 14px 3px;
+  text-align: right;
+}
+
+.recom-card-row {
+  display: flex;
+  width: 98%;
+  margin: 0 5px ;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.recom-card-row * {
+  color: #58595a;
+  display: flex;
+  align-items: center;
+}
+
+table{
+  width:100%;
+  background:#fff;
+  border:1px solid #ddd;
+}
+
+.columnHeader {
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  justify-content: space-around;
+  width: 95%;
+  margin: auto;
+  color: #544747;
+}
+
+
+td {
+  color: darkgrey;
+  padding: 10px;
+}
+
+th {
+  font-weight: 600;
+  min-width: 74px;
+  padding: 12px 0;
+  color: #5d5d5d;
+}
+
+tr td:first-child {
+  color: #000000;
+}
+
+.outside-controls a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  color: #5d5d5d;
+}
+
+.arrow::after {
+  content: ">";
+}
