@@ -107,12 +107,15 @@ class OptimizationFeature extends Component {
         event.target[3].value,
         event.target[4].value
       ],
-      r11: (event.target[0].value * 1.85).toFixed(2), // just takes the number and does something with it 
-      r12: event.target[1].value * 4,
-      r13: event.target[2].value + 23,
-      r21: (event.target[3].value / 2).toFixed(2),
-      r22: event.target[4].value + event.target[0].value,
-      r23: (event.target[3].value / event.target[1].value).toFixed(2)
+
+      // Make random Numbers with random equations - would be part of some algorithm
+
+      r11: parseInt(event.target[0].value * 1.85).toFixed(2), 
+      r12: parseInt(event.target[1].value * 4),
+      r13: parseInt(event.target[2].value + 23),
+      r21: parseInt(event.target[3].value / 2).toFixed(2),
+      r22: parseInt(event.target[4].value + event.target[0].value),
+      r23: parseInt(event.target[3].value / event.target[1].value).toFixed(2)
     };
 
     this.setState({
@@ -122,17 +125,54 @@ class OptimizationFeature extends Component {
       }
     });
 
+    const newOptimizationResults = [
+      {
+        heading: this.state.optimizationResults[0].heading,
+        recommendations: [
+          { 
+            label: this.state.optimizationResults[0].recommendations[0].label, 
+            value: newRow.r11, 
+            unit: "[unit]" 
+          },
+          {
+            label: this.state.optimizationResults[0].recommendations[1].label, 
+            value: newRow.r12, 
+            unit: "[unit]"
+          },
+          {
+            label: this.state.optimizationResults[0].recommendations[2].label, 
+            value: newRow.r13, 
+            unit: "[unit]"
+          }
+        ]
+      },
+      {
+        heading: this.state.optimizationResults[1].heading,
+        recommendations: [
+          {
+            label: this.state.optimizationResults[1].recommendations[0].label, 
+            value: newRow.r21, 
+            unit: "[unit]"
+          },
+          {
+            label: this.state.optimizationResults[1].recommendations[1].label, 
+            value: newRow.r22, 
+            unit: "[unit]"
+          },
+          {
+            label: this.state.optimizationResults[1].recommendations[2].label, 
+            value: newRow.r23, 
+            unit: "[unit]"
+          }
+        ]
+      }
+    ];
 
-    // ///////////////// AREA in Question - i don;t know what im doing
     this.setState({
-       ...this.state.optimizationResults[0].recommendations[0].value = newRow.r11,
-       ...this.state.optimizationResults[0].recommendations[1].value = newRow.r12,
-       ...this.state.optimizationResults[0].recommendations[2].value = newRow.r13,
-       ...this.state.optimizationResults[1].recommendations[1].value = newRow.r21,
-       ...this.state.optimizationResults[1].recommendations[1].value = newRow.r22,
-       ...this.state.optimizationResults[1].recommendations[2].value = newRow.r13,
-    })
-///////////////////////////////////////
+      optimizationResults: newOptimizationResults,
+    });
+
+
     event.target[0].value = '';
     event.target[1].value = '';
     event.target[2].value = '';
