@@ -35,7 +35,11 @@ class OptimizationFeature extends Component {
       {
         heading: "Optimization Param 1 - Remommendation",
         recommendations: [
-          { label: "Recommidation 1-1", value: 0, unit: "[unit]" },
+          { 
+            label: "Recommidation 1-1", 
+            value: 0, 
+            unit: "[unit]" 
+          },
           {
             label: "Recommidation 1-2",
             value: 0,
@@ -86,9 +90,11 @@ class OptimizationFeature extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
+    //Get the date for data grid
     const currentDate = new Date();
     const date = currentDate.getDate();
-    const month = currentDate.getMonth(); //Be careful! January is 0 not 1
+    const month = currentDate.getMonth(); 
     const year = currentDate.getFullYear();
     const dateString = date + "/" + (month + 1) + "/" + year;
 
@@ -101,12 +107,12 @@ class OptimizationFeature extends Component {
         event.target[3].value,
         event.target[4].value
       ],
-      r11: 0, // placeholder for values that need to be calculated for specific needs
-      r12: 0,
-      r13: 0,
-      r21: 0,
-      r22: 0,
-      r23: 0
+      r11: (event.target[0].value * 1.85).toFixed(2), // just takes the number and does something with it 
+      r12: event.target[1].value * 4,
+      r13: event.target[2].value + 23,
+      r21: (event.target[3].value / 2).toFixed(2),
+      r22: event.target[4].value + event.target[0].value,
+      r23: (event.target[3].value / event.target[1].value).toFixed(2)
     };
 
     this.setState({
@@ -115,6 +121,7 @@ class OptimizationFeature extends Component {
         rows: [...this.state.historicData.rows, newRow]
       }
     });
+    console.log(this.state.optimizationResults[0].recommendations[0]);
 
     event.target[0].value = '';
     event.target[1].value = '';
@@ -142,6 +149,7 @@ class OptimizationFeature extends Component {
               heading={heading}
               recommendations={recommendations}
               key={i}
+              
             />
           ))}
         </div>

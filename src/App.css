@@ -87,7 +87,7 @@ legend{
   border-style:none;
 }
 
-button {
+form button {
   width: 230px;
   border-radius: 5px;
   background:#3695f7;
@@ -97,6 +97,7 @@ button {
   font-size:14px;
   transition: 0.3s;
   cursor:pointer;
+  outline:none;
 }
 
 .dynamic-input, .dynamic-input input{
@@ -104,7 +105,7 @@ button {
 }
 
 
-button:hover{
+form button:hover{
   background:lightblue;
   color:darkblue;
 }
@@ -173,12 +174,12 @@ table{
 }
 
 
-td {
+tbody td {
   color: darkgrey;
   padding: 10px;
 }
 
-th {
+ th {
   font-weight: 600;
   min-width: 74px;
   padding: 12px 0;
@@ -189,11 +190,21 @@ tr td:first-child {
   color: #000000;
 }
 
-.outside-controls a {
+tr{
+  border-top:1px solid #ccc;
+}
+
+
+.outside-controls button{
   display: flex;
   text-decoration: none;
   align-items: center;
   color: #5d5d5d;
+  border:none;
+  background:#fff;
+  font-size: 15px;
+  outline:none;
+  cursor:pointer;
 }
 
 .arrow::after {

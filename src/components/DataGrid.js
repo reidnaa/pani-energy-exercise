@@ -6,12 +6,15 @@ import DataGridRow from "./DataGridRow";
 const DataGrid = ({ columns, rows }) => (
   <div>
     <table>
-      <thead>
+    <tbody>
+      <tr>
         <DataGridHeader columns={columns} />
-      </thead>
-      {rows.map(r => (
-        <DataGridRow row={r} />
+      </tr>
+      
+      {rows.map((r,i) => (
+        <DataGridRow row={r} key={i}/>
       ))}
+      </tbody>
     </table>
   </div>
 );

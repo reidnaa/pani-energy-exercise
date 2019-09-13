@@ -2,11 +2,12 @@ import React from 'react';
 import { string, number } from 'prop-types';
 
 const RecommendationCardRow = ({ label, value, unit }) => {
+    
     return(
         <div className="recom-card-row">
             <label>{label}</label>
-            <div class="dynamic-input">
-                <input value={value} /> <span>{unit}</span>
+            <div className="dynamic-input">
+                <input defaultValue={value} /> <span>{unit}</span>
             </div>
         </div>
     )
