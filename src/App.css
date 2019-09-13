@@ -45,10 +45,11 @@
   margin: auto;
 }
 
-.outside-controls p{
+.outside-controls p {
   border-bottom: 2px solid #3695f7;
-  color:#3695f7;
+  color: #3695f7;
   padding-bottom: 10px;
+  cursor: pointer;
   margin-bottom: 0;
 }
 
@@ -85,6 +86,12 @@ legend{
   padding: 10px;
   border-radius:5px;
   border-style:none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 form button {
@@ -140,7 +147,12 @@ form button:hover{
   border: none;
   padding: 14px 3px;
   text-align: right;
+  outline:none;
+  color: transparent;
+  text-shadow: 0 0 0 rgba(3, 27, 78, .7);
+  
 }
+
 
 .recom-card-row {
   display: flex;
