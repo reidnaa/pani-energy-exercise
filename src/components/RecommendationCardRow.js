@@ -7,7 +7,7 @@ const RecommendationCardRow = ({ label, value, unit }) => {
         <div className="recom-card-row">
             <label>{label}</label>
             <div className="dynamic-input">
-                <input defaultValue={value} /> <span>{unit}</span>
+                <input value={value} /> <span>{unit}</span>
             </div>
         </div>
     )

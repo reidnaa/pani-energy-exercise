@@ -125,9 +125,13 @@ class OptimizationFeature extends Component {
 
     // ///////////////// AREA in Question - i don;t know what im doing
     this.setState({
-       ...this.state.optimizationResults[0].recommendations[0].value = newRow.r11
+       ...this.state.optimizationResults[0].recommendations[0].value = newRow.r11,
+       ...this.state.optimizationResults[0].recommendations[1].value = newRow.r12,
+       ...this.state.optimizationResults[0].recommendations[2].value = newRow.r13,
+       ...this.state.optimizationResults[1].recommendations[1].value = newRow.r21,
+       ...this.state.optimizationResults[1].recommendations[1].value = newRow.r22,
+       ...this.state.optimizationResults[1].recommendations[2].value = newRow.r13,
     })
-    console.log(this.state.optimizationResults[0].recommendations[0].value);
 ///////////////////////////////////////
     event.target[0].value = '';
     event.target[1].value = '';
