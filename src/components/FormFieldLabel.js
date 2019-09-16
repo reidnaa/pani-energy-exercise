@@ -1,5 +1,4 @@
 import React from 'react';
-import { string } from 'prop-types';
 
 
 const FormFieldLabel = ({ label, unit }) => {
@@ -10,10 +9,6 @@ const FormFieldLabel = ({ label, unit }) => {
   )
 };
 
-FormFieldLabel.propTypes = {
-  label: string,
-  unit: string,
-};
 
 
 export default FormFieldLabel;

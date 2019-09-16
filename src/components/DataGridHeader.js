@@ -1,5 +1,5 @@
 import React from 'react';
-// import { shape } from 'prop-types';
+
 
 
 const DataGridHeader = ({ columns }) => {
@@ -16,8 +16,6 @@ const DataGridHeader = ({ columns }) => {
     )
 };
 
-// DataGridHeader.propTypes = {
-// //   columns: columnShape.isRequired, // not to sure what columnShape is 
-// };
+
 
 export default DataGridHeader;

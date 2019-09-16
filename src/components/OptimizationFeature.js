@@ -76,7 +76,7 @@ class OptimizationFeature extends Component {
     historicData: {
       columns: [
         "Date",
-        "Inputs(p1, p2, p3, p4, p5)",
+        "Inputs",
         "Recommendation 1-1",
         "Recommendation 1-2",
         "Recommendation 1-3",
@@ -111,10 +111,10 @@ class OptimizationFeature extends Component {
       // Make random Numbers with random equations - would be part of some algorithm
 
       r11: parseInt(event.target[0].value * 1.85).toFixed(2), 
-      r12: parseInt(event.target[1].value * 4),
-      r13: parseInt(event.target[2].value + 23),
+      r12: parseInt(event.target[1].value * 4).toFixed(2),
+      r13: parseInt(event.target[2].value + 23).toFixed(2),
       r21: parseInt(event.target[3].value / 2).toFixed(2),
-      r22: parseInt(event.target[4].value + event.target[0].value),
+      r22: parseInt(event.target[4].value + event.target[0].value).toFixed(2),
       r23: parseInt(event.target[3].value / event.target[1].value).toFixed(2)
     };
 
@@ -179,20 +179,32 @@ class OptimizationFeature extends Component {
     event.target[3].value = '';
     event.target[4].value = '';
 
+    const scrollWin = () => {
+      console.log('scroll me')
+      window.scrollBy(400, 0);
+    }
+    scrollWin();
   };
 
   render() {
     const { formFields, historicData, optimizationResults } = this.state;
     return (
       <div className="feature">
-        
-        <Divider label="Current Conditions" />
+        <div className="outside-controls">
+          <p>Optimization Calculator</p>
+          
+        </div>
+        <div className="first">
+        <Divider label="Your Current Plant Conditions" />
         <Form
           formFields={formFields}
           form={this.state.form}
           handleSubmit={this.handleSubmit}
         />
-        <Divider label="Optimization Recommendations" />
+        </div>
+
+        <div className="second">
+        <Divider label="Recommendations for Optimization" />
         <div className="recom-cards">
           {optimizationResults.map(({ heading, recommendations }, i) => (
             <RecommendationCard
@@ -203,8 +215,11 @@ class OptimizationFeature extends Component {
             />
           ))}
         </div>
-        <Divider label="Recommendation History" />
+        </div>
+        <div className="third">
+        <Divider label="Recommendations by Date" />
         <DataGrid columns={historicData.columns} rows={historicData.rows} />
+      </div>
       </div>
     );
   }

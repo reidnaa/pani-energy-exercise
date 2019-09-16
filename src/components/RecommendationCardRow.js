@@ -1,5 +1,4 @@
 import React from 'react';
-import { string, number } from 'prop-types';
 
 const RecommendationCardRow = ({ label, value, unit }) => {
     
@@ -13,10 +12,6 @@ const RecommendationCardRow = ({ label, value, unit }) => {
     )
 };
 
-RecommendationCardRow.propTypes = {
-  label: string.isRequired,
-  value: number.isRequired,
-  unit: string.isRequired,
-};
+
 
 export default RecommendationCardRow;

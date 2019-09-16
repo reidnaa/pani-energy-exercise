@@ -1,5 +1,4 @@
 import React from 'react';
-import { arrayOf, number, shape, string } from 'prop-types';
 import RecommendationCardHeader from './RecommendationCardHeader';
 import RecommendationCardRow from './RecommendationCardRow';
 
@@ -14,15 +13,6 @@ const RecommendationCard = ({ heading, recommendations}) => (
     </div>
   );
  
-  const recommendationShape = shape({
-    label: string,
-    value: number,
-    unit: string,
-  });
-  
-  RecommendationCard.propTypes = {
-    heading: string,
-    recommendations: arrayOf(recommendationShape),
-  };
+
 
   export default RecommendationCard;

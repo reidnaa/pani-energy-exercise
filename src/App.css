@@ -25,32 +25,80 @@
   color: #61dafb;
 }
 
+header {
+  background-color: #0e0e0e;
+  height: 150px;
+  position: relative;
+}
+header h1 {
+  color: white;
+  width: 100%;
+  padding-top: 10px;
+  font-size: 35px;
+}
+
+.top{
+  display:flex;
+}
+
+nav {
+  display: flex;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  transition: all ease-in-out .4s;
+}
+
+.logo {
+  display: flex;
+  position: absolute;
+}
 
 .feature {
-  width: 90%;
-  padding: 16px;
-  margin: auto;
+  width: 100%;
+ 
   background: #f0f2f4;
+  text-align: left;
+  padding-left: 0;
 }
 
-.divider{
-  color:#545556;
-  padding:10px;
+.blurred{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
-.outside-controls{
+.divider {
+  color: #3c8105;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.outside-controls {
   display: flex;
-  justify-content: space-between;
-  width: 84%;
-  margin: auto;
+  background: #0e0e0e;
+  padding-left: 20px;
 }
 
 .outside-controls p {
-  border-bottom: 2px solid #3695f7;
-  color: #3695f7;
+  border-bottom: 2px solid #3c8105;
+  color: #fff;
   padding-bottom: 10px;
-  cursor: pointer;
+  font-size: 30px;
   margin-bottom: 0;
+}
+
+nav a:hover {
+  background-color:black;
+
 }
 
 
@@ -65,9 +113,8 @@ legend{
   padding: 0 10px;
 }
 
-.form {
-  display: flex;
-  align-items: flex-end;
+.fields{
+  display:flex;
 }
 
 .form-single{
@@ -88,6 +135,10 @@ legend{
   border-style:none;
 }
 
+.form-field input:focus{
+  outline : 2px solid #3c8105;
+}
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -97,14 +148,19 @@ input[type=number]::-webkit-outer-spin-button {
 form button {
   width: 230px;
   border-radius: 5px;
-  background:#3695f7;
+  background: #3c8105;
   color: white;
   height: 38px;
-  margin: 0 5px;
-  font-size:14px;
+  margin: 10px 0;
+  font-size: 14px;
   transition: 0.3s;
-  cursor:pointer;
-  outline:none;
+  cursor: pointer;
+  outline: none;
+}
+
+.form {
+  width: 100%;
+  margin: auto;
 }
 
 .dynamic-input, .dynamic-input input{
@@ -112,13 +168,14 @@ form button {
 }
 
 
-form button:hover{
-  background:lightblue;
-  color:darkblue;
+form button:hover {
+  background: #ade6b5;
+  color: #3c8105;
 }
 
 .recom-cards {
   display: flex;
+  width: 90%;
   justify-content: space-around;
 }
 
@@ -133,12 +190,13 @@ form button:hover{
   width: 49%;
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .recom-card-header {
   padding: 15px 15px 15px 5px;
   color: #544747;
+  margin:auto;
 }
 
 
@@ -169,10 +227,11 @@ form button:hover{
   align-items: center;
 }
 
-table{
-  width:100%;
-  background:#fff;
-  border:1px solid #ddd;
+table {
+  width: 100%;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
 }
 
 .columnHeader {
@@ -188,14 +247,16 @@ table{
 
 tbody td {
   color: darkgrey;
+  text-align: center;
   padding: 10px;
 }
 
- th {
+th {
   font-weight: 600;
   min-width: 74px;
   padding: 12px 0;
   color: #5d5d5d;
+  text-align: center;
 }
 
 tr td:first-child {
@@ -204,6 +265,12 @@ tr td:first-child {
 
 tr{
   border-top:1px solid #ccc;
+}
+
+.first, .second, .third{
+  background: #ccc;
+  padding: 20px;
+  margin-top:20px;
 }
 
 
@@ -221,4 +288,18 @@ tr{
 
 .arrow::after {
   content: ">";
+}
+
+.around{
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px;
+}
+
+.logout-button{
+  background-color: #3695f7;
+  padding: 5px 20px;
+  font-size: 15px;
+  border-radius: 10px;
+  color: white;
 }
